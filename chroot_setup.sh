@@ -60,6 +60,9 @@ initrd  /initramfs-linux-lts.img
 options root=UUID=$ROOT_UUID quiet splash nvidia_drm.modeset=1 intel_iommu=on iommu=pt rw
 EOF
 
+#for ddcutil
+echo "i2c-dev" > /etc/modules-load.d/ddcutil.conf
+
 #setup ufw
 echo "Configuring UFW Firewall Rules.."
 ufw default deny incoming
