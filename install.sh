@@ -56,7 +56,7 @@ mount "${ROOT_PART}" /mnt
 mount --mkdir "${BOOT_PART}" /mnt/boot
 
 echo "Installing Base System..."
-pacstrap -K /mnt base base-devel linux linux-firmware linux-headers linux-lts linux-lts-headers nano networkmanager neovim sudo intel-ucode nvidia-dkms nvidia-utils nvidia-settings nvidia-prime ddcutil bluez bluez-utils wayland alacritty fish git adw-gtk-theme gtk4 inter-font man-db niri otf-monaspace pipewire pipewire-alsa pipewire-pulse pipewire-jack power-profiles-daemon qt5-wayland qt6-wayland sddm thunar wlsunset thunar-volman gvfs xdg-user-dirs xorg-xhost xorg-xwayland xwayland-satellite zathura zathura-pdf-mupdf ufw
+pacstrap -K /mnt base base-devel linux linux-firmware linux-headers linux-lts linux-lts-headers nano networkmanager neovim sudo intel-ucode nvidia-dkms nvidia-utils nvidia-settings nvidia-prime ddcutil bluez bluez-utils wayland alacritty fish git adw-gtk-theme gtk4 inter-font man-db niri otf-monaspace pipewire pipewire-alsa pipewire-pulse pipewire-jack power-profiles-daemon qt5-wayland qt6-wayland sddm thunar wlsunset thunar-volman gvfs xdg-user-dirs xorg-xhost xorg-xwayland xwayland-satellite zathura zathura-pdf-mupdf ufw playerctl
 
 echo ""
 echo "Generating FSTAB..."
