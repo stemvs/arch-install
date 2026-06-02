@@ -73,9 +73,9 @@ read -rp "Enter Dotfiles GitHub URL: " DOTFILES_URL
 echo ""
 
 echo "Passing Variables to Chroot.."
-mkdir -p /mnt/tmp
-install -m 600 /dev/null /mnt/tmp/install_vars.sh
-cat <<EOF >> /mnt/tmp/install_vars.sh
+mkdir -p /mnt/home
+install -m 600 /dev/null /mnt/home/install_vars.sh
+cat <<EOF >> /mnt/home/install_vars.sh
 export HOSTNAME="${HOSTNAME}"
 export ROOT_PASSWORD="${ROOT_PASSWORD}"
 export USERNAME="${USERNAME}"
@@ -84,9 +84,9 @@ export DOTFILES_URL="${DOTFILES_URL}"
 EOF
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-install -m 700 "$SCRIPT_DIR/chroot_setup.sh" /mnt/tmp/chroot_setup.sh
+install -m 700 "$SCRIPT_DIR/chroot_setup.sh" /mnt/home/chroot_setup.sh
 
 echo "Executing Chroot Script.."
-arch-chroot /mnt /tmp/chroot_setup.sh
+arch-chroot /mnt /home/chroot_setup.sh
 
 echo "Safe to reboot..."
