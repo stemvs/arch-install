@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-source /tmp/install_vars.sh
+source /home/install_vars.sh
 
 ln -sf /usr/share/zoneinfo/America/Denver /etc/localtime
 hwclock --systohc
@@ -106,7 +106,7 @@ else
 fi
 
 echo "Cleaning Up Configuration Scripts.."
-rm /tmp/install_vars.sh
-rm /tmp/chroot_setup.sh
+rm /home/install_vars.sh
+rm /home/chroot_setup.sh
 
 exit
